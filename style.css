@@ -15,7 +15,6 @@
     flex-direction: column;
     word-wrap: break-word;
     word-break: break-all;
-    width: 124px;
     min-height: 40px;
 }
 .previous-operand {
