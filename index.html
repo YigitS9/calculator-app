@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css"/>
+
+
+
+    <title>Calculator app</title>
+
+    <style></style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="top-section">
+        <div class="calc-text">calc</div>
+        <div class="theme-text">THEME</div>
+
+        <div class="theme-selector">
+          <div class="theme-numbers">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+
+          <div class="tri-state-toggle">
+            <input class="button" type="radio" name="toggle" id="one" />
+            <input class="button" type="radio" name="toggle" id="two" />
+            <input class="button" type="radio" name="toggle" id="three" />
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div data-previous-operand class="previous-operand"></div>
+        <div data-current-operand class="current-operand"></div>
+      </div>
+
+      <div class="grid-wrapper">
+        <button data-number class="keypadbtn">7</button>
+        <button data-number class="keypadbtn">8</button>
+        <button data-number class="keypadbtn">9</button>
+        <button data-delete class="keypadbtn del">DEL</button>
+        <button data-number class="keypadbtn">4</button>
+        <button data-number class="keypadbtn">5</button>
+        <button data-number class="keypadbtn">6</button>
+        <button data-operation class="keypadbtn">+</button>
+        <button data-number class="keypadbtn">1</button>
+        <button data-number class="keypadbtn">2</button>
+        <button data-number class="keypadbtn">3</button>
+        <button data-operation class="keypadbtn">-</button>
+        <button data-number class="keypadbtn">.</button>
+        <button data-number class="keypadbtn">0</button>
+        <button data-operation class="keypadbtn">/</button>
+        <button data-operation class="keypadbtn">x</button>
+        <button data-reset class="keypadbtn reset" id="bigbtn">RESET</button>
+        <button data-equals class="keypadbtn equals" id="bigbtn">=</button>
+      </div>
+    </div>
+  </body>
+  <script src="theme-selector.js"></script>
+  <script src="calculator.js"></script>
+</html>
