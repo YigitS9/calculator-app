@@ -47,7 +47,7 @@ class Calculator {
       case "/":
         calculation = prev / curr;
         break;
-      case "*":
+      case "x":
         calculation = prev * curr;
         break;
       default:
