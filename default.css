@@ -4,108 +4,165 @@
   box-sizing: border-box;
 }
 .result {
-    background-color: hsl(224, 36%, 15%);
-    margin: 10px 0;
-    border-radius: 5px;
-    color: hsl(0, 0%, 100%);
-    padding: 5px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    word-wrap: break-word;
-    word-break: break-all;
-    min-height: 40px;
+  background-color: hsl(224, 36%, 15%);
+  margin: 1rem 0;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 5rem;
+}
+.current-operand {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 1rem;
 }
 .previous-operand {
   color: hsl(0, 0%, 75%);
-  font-size: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 1rem;
 }
 body {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   background-color: hsl(222, 26%, 31%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.wrapper {
+  padding: 2rem 0;
+}
 .tri-state-toggle > * {
-  height: 10px;
-  width: 10px;
+  height: 1rem;
+  width: 1rem;
+  margin: 0.25rem;
   appearance: none;
   background-color: hsl(6, 63%, 50%);
-  border-radius: 50%;
+  border-radius: 3vmin;
   opacity: 0;
-  margin: 3px;
 }
 input:hover {
   cursor: pointer;
 }
 .tri-state-toggle {
   display: flex;
-  justify-content: center;
-  border-radius: 50px;
+  justify-content: space-between;
+  border-radius: 3vmin;
   background-color: hsl(223, 31%, 20%);
+  width: fit-content;
 }
 #one {
   opacity: 1;
 }
 .grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 24px);
-  grid-template-rows: repeat(5, 24px);
-  column-gap: 4px;
-  row-gap: 4px;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: repeat(5, 4.25rem);
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
   background-color: hsl(223, 31%, 20%);
-  padding: 8px;
+  padding: 1.25rem;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(4, 8rem);
+    column-gap: 1.25rem;
+    row-gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 5px;
+  }
+}
+.grid-wrapper > * {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 .top-section {
   display: flex;
   justify-content: space-between;
-  color: hsl(0, 0%, 100%)
+  color: hsl(0, 0%, 100%);
+}
+.theme-selection {
+  display: flex;
 }
 .theme-numbers {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  font-size: 7px;
+  font-size: 0.6rem;
+  font-weight: 600;
 }
 .theme-text {
-  font-size: 5px;
-  align-self: center;
-  margin: 14px 4px auto auto;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  align-self: flex-end;
+  justify-self: center;
+  margin: 0 1rem 0.5rem 0;
+}
+.theme-selector {
+  justify-self: flex-end;
+}
+.calc-text {
+  font-size: 2rem;
+  font-weight: 700;
 }
 .keypadbtn {
   background-color: hsl(30, 25%, 89%);
-  border-radius: 2px;
+  border-radius: 7%;
   border: none;
-  box-shadow: inset 0 -2px hsl(28, 16%, 65%);
+  box-shadow: inset 0 -0.25rem hsl(28, 16%, 65%);
   transition-duration: 0.12s;
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   color: hsl(221, 14%, 31%);
   cursor: pointer;
 }
 .keypadbtn:hover {
   background-color: hsl(221, 14%, 31%);
-  box-shadow: inset 0 -2px hsl(28, 16%, 65%);
+  box-shadow: inset 0 -0.25rem hsl(28, 16%, 65%);
   color: hsl(30, 25%, 89%);
 }
 .keypadbtn:active {
-  box-shadow: inset 0 -1px hsl(28, 16%, 65%);
+  box-shadow: inset 0 -0.15rem hsl(28, 16%, 65%);
   transform: translateY(1px);
 }
-.del, .reset {
+.del,
+.reset {
   background-color: hsl(225, 21%, 49%);
-  box-shadow: inset 0 -2px hsl(224, 28%, 35%);
+  box-shadow: inset 0 -0.25rem hsl(224, 28%, 35%);
   color: hsl(0, 0%, 100%);
-  font-size: 0.5rem;
+  font-size: 1.5rem;
+}
+.del:hover,
+.reset:hover {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: inset 0 -0.25rem hsl(224, 28%, 35%);
+  color: hsl(225, 21%, 49%);
+}
+.del:active,
+.reset:active {
+  box-shadow: inset 0 -0.15rem hsl(224, 28%, 35%);
+  transform: translateY(1px);
 }
 .equals {
   background-color: hsl(6, 63%, 50%);
-  box-shadow: inset 0 -2px hsl(6, 70%, 34%);
+  box-shadow: inset 0 -0.25rem hsl(6, 70%, 34%);
   color: hsl(0, 0%, 100%);
-  font-size: 1rem;
+  font-size: 2.5rem;
+}
+.equals:hover {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: inset 0 -0.25rem hsl(6, 70%, 34%);
+  color: hsl(6, 63%, 50%);
+}
+.equals:active {
+  box-shadow: inset 0 -0.15rem hsl(6, 70%, 34%);
+  transform: translateY(1px);
 }
 #bigbtn {
   grid-column: span 2;
